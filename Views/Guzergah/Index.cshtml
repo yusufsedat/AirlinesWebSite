@@ -1,0 +1,61 @@
+﻿
+@model WebProgramlama_Odev.Models.GuzergahModel
+
+
+<html lang="en">
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Guzergah.css" asp-append-version="true" />
+   
+         
+</head>
+
+<body>
+
+    <div class="guzergah-form">
+       
+            <form asp-action="Abc">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+               
+                <div class="form-group">
+                    <label asp-for="Nereden" class="control-label"></label>
+                    <input asp-for="Nereden" class="form-control" />
+                    <span asp-validation-for="Nereden" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Nereye" class="control-label"></label>
+                    <input asp-for="Nereye" class="form-control" />
+                    <span asp-validation-for="Nereye" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Tarih" class="control-label"></label>
+                    <input asp-for="Tarih" type="date" class="form-control" />
+                    <span asp-validation-for="Tarih" class="text-danger"></span>
+                </div>
+                <br />
+                <br />
+
+                <div class="form-group">
+                    <input type="submit" value="Uçuşlara Bak" class="btn btn-warning" />
+                </div>
+            </form>
+        
+    </div>
+   
+
+</body>
+
+
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+
+
+
