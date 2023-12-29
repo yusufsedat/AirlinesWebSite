@@ -1,0 +1,52 @@
+﻿
+@model User
+<html>
+
+    <head>
+
+    <link rel="stylesheet" href="~/css/Form.css" asp-append-version="true" />
+
+
+    </head>
+
+    <body>
+
+        <div class="login-form">
+            
+         <h1>Giriş Yap</h1>
+
+        <form asp-controller="Login" asp-action="Gor">
+            <div>
+                <label asp-for="email"></label>
+                <input asp-for="email" class="form-control" placeholder=" xxx@ornek.com" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="password"></label>
+                <input type="password" asp-for="password" class="form-control" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+            <div class="login-btn">
+
+                <input type="submit" value="Giriş Yap" class="btn btn-warning" /> <br> <br>
+
+                <h4> Henüz hesabın yok mu ? </h4><a asp-action="KayitOl" class="btn btn-warning"> Kayıt Ol</a>
+                
+            </div>
+            </form>
+            </div>
+
+  
+   
+
+    </body>
+
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

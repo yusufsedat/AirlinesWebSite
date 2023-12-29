@@ -1,0 +1,71 @@
+﻿
+@model User
+
+
+<html> 
+
+
+    <head> 
+
+        <link rel="stylesheet" href="~/css/Form.css" asp-append-version="true">
+
+    </head>
+
+    <body>
+
+        <div class="login-form">
+
+            <h1>Kayıt Ol</h1>
+            <form asp-action="" asp-controller="Login">
+
+                <div>
+
+                    <label asp-for="firstname"></label>
+                    <input asp-for="firstname" class="form-control" />
+                    <span asp-validation-for="firstname" class="text-danger"></span>
+
+                </div>
+                <div>
+
+                <label asp-for="lastname"></label>
+                <input asp-for="lastname" class="form-control" />
+                <span asp-validation-for="lastname" class="text-danger"></span>
+
+                </div>
+            <div>
+                <label asp-for="email"></label>
+                <input asp-for="email" class="form-control" type="email" placeholder=" xxx@ornek.com" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="phone"></label>
+                <input asp-for="phone" type="text" class="form-control" placeholder="5xx xxx xx xx"  />
+                <span asp-validation-for="phone" class="text-danger"></span>
+            </div>
+
+            <div>
+                <label asp-for="password"></label>
+                <input type="password" asp-for="password" class="form-control" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+
+            <div class="login-btn">
+
+                <input type="submit" class="btn btn-warning" value="Kayıt Ol"/>
+
+            </div>
+
+            </form>
+
+        </div>
+        
+
+    </body>
+
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
