@@ -1,0 +1,46 @@
+﻿@model AdminModel
+
+
+<html> 
+
+
+    <head>
+
+    <link rel="stylesheet" href="~/css/Form.css" asp-append-version="true" />
+    </head>
+
+    <body>
+
+        <div class="login-form">
+            <h1>
+                Sadece Adminler Giriş Yapabilir
+            </h1>
+
+            <form asp-controller="Admin" asp-action="LoginAdmin">
+                <div>
+                    <label asp-for="email"></label>
+                    <input asp-for="email" class="form-control" placeholder="xxx@ornek.com" />
+                    <span asp-validation-for="email" class="text-danger" ></span>
+                </div>
+            <div>
+
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" type="password"  />
+                <span asp-validation-for="Password" class="text-danger"></span>
+
+            </div> 
+            <div class="login-btn">
+                <input type="submit" class="btn btn-warning" value="Giriş Yap" />
+            </div>
+            </form>
+
+        </div>
+        
+    </body>
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
