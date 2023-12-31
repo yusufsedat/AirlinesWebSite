@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebProgramlama_Odev.Models.GuzergahModel>
+
+<link rel="stylesheet" href="~/css/Form.css" asp-append-version="true" />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nereden)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nereye)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tarih)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nereden)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nereye)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tarih)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.UcusId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.UcusId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.UcusId">Delete</a> |
+                <a class="btn btn-warning" asp-action="Create">Create New</a>
+
+            </td>
+        </tr>
+}
+        
+
+            
+      
+       
+    </tbody>
+</table>
