@@ -1,5 +1,4 @@
-﻿
-@model User
+﻿@model WebProgramlama_Odev.Models.User
 
 
 <html> 
@@ -16,13 +15,14 @@
         <div class="login-form">
 
             <h1>Kayıt Ol</h1>
-            <form asp-action="" asp-controller="Login">
 
+            <form asp-action="KayitOl" asp-controller="Login">
+            
                 <div>
 
-                    <label asp-for="firstname"></label>
-                    <input asp-for="firstname" class="form-control" />
-                    <span asp-validation-for="firstname" class="text-danger"></span>
+                   <label asp-for="firstname"></label>
+                   <input asp-for="firstname" class="form-control" />
+                   <span asp-validation-for="firstname" class="text-danger"></span>
 
                 </div>
                 <div>

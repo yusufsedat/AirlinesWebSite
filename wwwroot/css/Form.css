@@ -1,0 +1,30 @@
+﻿body {
+    background-color: lightgoldenrodyellow;
+   
+}
+
+.login-form {
+    width: 400px;
+    max-width: 600px;
+    margin: 100px auto; 
+    padding: 20px;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+}
+
+.login-btn {
+    margin-top: 25px;
+    
+}
+
+
+
+
+.d-grid{
+    margin-top:200px;
+}
+
+.message-form {
+    margin-top: 100px;
+    margin: 100px auto; 
+}

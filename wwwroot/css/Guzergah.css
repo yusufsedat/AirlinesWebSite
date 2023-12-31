@@ -1,0 +1,54 @@
+﻿body {
+    background-color: #ffd700;
+    background-image: url("../css/Images/plane.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .guzergah-form {
+        width: 90%; 
+        max-width: none;
+        margin: 0 auto;
+        position: relative; 
+        top: initial; 
+        transform: none; 
+    }
+
+    body {
+        background-image: url("../css/Images/plane2.jpg");
+        background-size: cover;
+    }
+}
+
+.guzergah-form {
+    width: 100%;
+    max-width: 600px;
+    position: absolute;
+    height: auto;
+    right: 0;
+    top: 50%; 
+    transform: translate(0, -50%);
+    margin-right: 10px; 
+    margin-left: 10px; 
+    padding: 20px;
+    box-sizing: border-box; 
+}
+.guzergah-form input,
+.guzergah-form select,
+.guzergah-form label {
+        width: 100%; 
+        box-sizing: border-box;
+        
+        
+    }
+.submit-btn {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-top: 15px;
+    padding: 1rem 0;
+    text-align: center; 

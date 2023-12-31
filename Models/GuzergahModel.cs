@@ -6,12 +6,11 @@ namespace WebProgramlama_Odev.Models
     {
         [Key]
         public int UcusId { get; set; }
-      
+
         [Display(Name = "Nereden?")]
         [Required(ErrorMessage = "Gerekli")]
         public string Nereden { get; set; }
 
-       
         [Display(Name = "Nereye?")]
         [Required(ErrorMessage = "Gerekli")]
         public string Nereye { get; set; }
@@ -19,10 +18,8 @@ namespace WebProgramlama_Odev.Models
         [Required(ErrorMessage = "Gerekli")]
         [Display(Name = "Tarih")]
         public DateTime Tarih { get; set; }
-        
 
-        public IEnumerable <UcusModel> Ucuss { get; set; }
-
-
+        public IEnumerable<UcusModel>? Ucuss { get; set; }
     }
+
 }

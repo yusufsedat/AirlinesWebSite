@@ -1,0 +1,60 @@
+﻿
+@model User
+
+
+<html> 
+
+
+
+    <head>
+
+
+      <link rel="stylesheet" href="~/css/Form.css" asp-append-version="true" />  
+
+
+    </head>
+
+
+    <body>
+            @{
+                var mesaj = ViewData["Mesaj"] as string;
+            }
+
+            @if (!string.IsNullOrEmpty(mesaj))
+            {
+                <div class="alert alert-info">@mesaj</div>
+            }
+
+
+        <div class="login-form">
+
+            <h1> Bize Mesaj Gönder</h1>
+        <form asp-controller="Contact" asp-action="Index">
+            <div>
+                <label asp-for="email"></label>
+                <input asp-for="email" class="form-control" type="email" placeholder=" xxx@ornek.com" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="message"></label>
+                <textarea asp-for="message" class="form-control" ></textarea>
+                <span asp-validation-for="message" class="text-danger"></span>
+            </div>
+            <div class="login-btn">
+
+                <button type="submit" class="btn btn-warning">Gönder </button>
+
+            </div>
+        </form>
+        </div>
+
+    </body>
+
+
+
+</html>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,46 @@
+﻿
+@model IEnumerable<AdminModel>
+
+<h3>Adminler</h3>
+
+<link rel="stylesheet" href="~/css/Form.css" asp-append-version="true" />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    <a asp-controller="Admin" asp-action="Edit" asp-route-id="@item.IdAdmin">Edit</a> |
+                    <a asp-controller="Admin" asp-action="Details" asp-route-id="@item.IdAdmin">Details</a> |
+                    <a asp-controller="Admin" asp-action="Delete" asp-route-id="@item.IdAdmin">Delete</a> |
+                    <a asp-controller="Admin" asp-action="Create" asp-route-id="@item.IdAdmin">Add Admin</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

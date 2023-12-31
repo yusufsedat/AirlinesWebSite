@@ -9,6 +9,8 @@ namespace WebProgramlama_Odev.Models
         public DbSet <GuzergahModel> Guzergah { get; set; }
         public DbSet <UcusModel> Ucus { get; set; }
         public DbSet <AdminModel> Admins { get; set; }
+        public DbSet <UserUcus> UserUcus { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -11,31 +11,30 @@ namespace WebProgramlama_Odev.Models
 
         [Display(Name = "Ad")]
         [Required(ErrorMessage ="Gerekli")]
-        public string firstname { get; set; }
+        public string? firstname { get; set; }
 
         [Display(Name = "Soyad")]
         [Required(ErrorMessage = "Gerekli")]
-        public string lastname { get; set; }
+        public string? lastname { get; set; }
 
         
         [Display(Name = "Mail Adresi")]
         [Required]
         [EmailAddress(ErrorMessage = "Lütfen Geçerli Bir Mail Adresi Giriniz !")]
-        public string email { get; set; }
+        public string? email { get; set; }
         [Display(Name = "Telefon Numarası")]
-        public long phone { get; set; }
+        public long? phone { get; set; }
 
         [Display(Name = "Şifreniz")]
         [Required(ErrorMessage = "Gerekli")]
-        public string password { get; set; }
+        public string? password { get; set; }
 
         [Display(Name = "Mesajınız")]
-        [Required(ErrorMessage = "Gerekli")]
-        public string message { get; set; }
+        public string? message { get; set; }
 
       
 
-        public IEnumerable<UserUcus> UserUcuss { get; set; }
+        public IEnumerable<UserUcus>? UserUcuss { get; set; }
 
 
         
@@ -50,12 +49,12 @@ namespace WebProgramlama_Odev.Models
         public int PnrNo { get; set; }
 
         [ForeignKey("PnrNo")]
-        public UcusModel Ucus { get; set; }
+        public UcusModel? Ucus { get; set; }
         
 
         public int UserId {get; set; }
 
         [ForeignKey("UserId")]
-        public User User { get; set; }
+        public User? User { get; set; }
     }
 }

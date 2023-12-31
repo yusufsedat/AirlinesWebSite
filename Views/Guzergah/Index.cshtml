@@ -1,4 +1,8 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+
+@inject IViewLocalizer localizer
+
+
 @model WebProgramlama_Odev.Models.GuzergahModel
 
 
@@ -15,21 +19,34 @@
 
     <div class="guzergah-form">
        
-            <form asp-action="Abc">
+            <form asp-action="UygunUcusListesi">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-               
+            
+           
+            <div class="form-group">
+                <label for="selectedNereden">@localizer["Nereden"]</label>
+                <select id="selectedNereden" name="selectedNereden" class="form-select form-select-lg mb-3">
+                   
+                    @foreach (var item in ViewBag.NeredenList)
+                    {
+                        <option value="@item">@item</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="selectedNereye">@localizer["Nereye"]</label>
+                <select id="selectedNereye" name="selectedNereye" class="form-select form-select-lg mb-3">
+                    
+                    @foreach (var item in ViewBag.NereyeList)
+                    {
+                        <option value="@item">@item</option>
+                    }
+                </select>
+            </div>
+
                 <div class="form-group">
-                    <label asp-for="Nereden" class="control-label"></label>
-                    <input asp-for="Nereden" class="form-control" />
-                    <span asp-validation-for="Nereden" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Nereye" class="control-label"></label>
-                    <input asp-for="Nereye" class="form-control" />
-                    <span asp-validation-for="Nereye" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Tarih" class="control-label"></label>
+                <label for="Tarih" class="control-label">@localizer["Tarih"]</label>
                     <input asp-for="Tarih" type="date" class="form-control" />
                     <span asp-validation-for="Tarih" class="text-danger"></span>
                 </div>
@@ -37,16 +54,21 @@
                 <br />
 
                 <div class="form-group">
-                    <input type="submit" value="Uçuşlara Bak" class="btn btn-warning" />
+                    <input type="submit" value="@localizer["Uçuşlara Bak"]" class="btn btn-warning" />
                 </div>
             </form>
         
     </div>
-   
+    <div class="btn-group-vertical position-absolute bottom-0 start-0">
+
+                     <a class="btn btn-success" href="/?ui-culture=en-US">EN</a>
+                     <a class="btn btn-success" href="/?ui-culture=tr-TR">TR</a>
+               </div>
+                
 
 </body>
 
-
+  
 </html>
 
 @section Scripts {
